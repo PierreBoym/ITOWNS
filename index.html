@@ -15,7 +15,9 @@ and open the template in the editor.
         <link rel="icon" type="image/png" href="images/icone.png" />
     </head>
     <body>
-        <div id="viewerDiv"></div>
+        <div id="viewerDiv">
+          <button type="button" id="button_sud">Inclinaison SUD</button>
+        </div>
         <script src="examples/GUI/GuiTools.js"></script>
         <script src="itowns.js"></script>
         <script type="text/javascript">
@@ -70,6 +72,15 @@ and open the template in the editor.
             });
 
             window.globeView = globeView;
+
+            // Inclinaison Sud
+            var button_sud = document.getElementById('button_sud');
+            button_sud.addEventListener("click", function(){
+              var current_pos=globeView.controls.getCameraTargetGeoPosition();
+              console.log(current_pos);
+            });
+
+
 </script>
     </body>
 </html>
