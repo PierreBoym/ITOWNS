@@ -27,3 +27,16 @@ body {
 	margin-right: 5px;
 	margin-top: 5px;
 }
+
+#splitSlider {
+		position: absolute;
+		left: 50%;
+		top: 0px;
+		width: 4px;
+		height: 100%;
+		background-color: #666666;
+}
+
+#splitSlider:hover {
+		cursor: ew-resize;
+}

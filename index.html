@@ -18,69 +18,15 @@ and open the template in the editor.
         <div id="viewerDiv">
           <button type="button" id="button_sud">Inclinaison SUD</button>
         </div>
+        <div id="splitSlider"></div>
+
         <script src="examples/GUI/GuiTools.js"></script>
         <script src="itowns.js"></script>
+
         <script type="text/javascript">
-            /* global itowns,document,GuiTools*/
-
-            // Initial position
-            var positionOnGlobe = { longitude: 2.351323, latitude: 48.856712, altitude: 25000000 };
-
-            // iTowns namespace defined here
-            // Creation of the HTML DOM where the view will be initialized
-            var viewerDiv = document.getElementById('viewerDiv');
-            // Creation of the globe
-            var globeView = new itowns.GlobeView(viewerDiv, positionOnGlobe);
-            // Creation of the menu
-            var menuGlobe = new GuiTools('menuDiv', globeView);
-            menuGlobe.view = globeView;
-
-
-            function addLayerCb(layer) {
-                return globeView.addLayer(layer);
-            }
-
-            // Adding Layers
-            var promises = []
-            promises.push(itowns.Fetcher.json('examples/layers/JSONLayers/Ortho.json').then(addLayerCb));
-            promises.push(itowns.Fetcher.json('examples/layers/JSONLayers/WORLD_DTM.json').then(addLayerCb));
-            promises.push(itowns.Fetcher.json('examples/layers/JSONLayers/IGN_MNT_HIGHRES.json').then(addLayerCb));
-
-            menuGlobe.addGUI('RealisticLighting', false,
-                function(newValue) { globeView.setRealisticLightingOn(newValue); });
-
-            // Adding layers in the menu
-            Promise.all(promises).then(function () {
-                menuGlobe.addImageryLayersGUI(globeView.getLayers(function (l) { return l.type === 'color'; }));
-                menuGlobe.addElevationLayersGUI(globeView.getLayers(function(l) { return l.type === 'elevation'; }));
-                console.info('menuGlobe initialized');
-            }).catch( function (e) { console.error(e) });
-
-            // Wait that the globe is well initialized, you should put your function in this event
-            globeView.addEventListener(itowns.GLOBE_VIEW_EVENTS.GLOBE_INITIALIZED, function () {
-                // eslint-disable-next-line no-console
-                console.info('Globe initialized');
-                /*
-                ****************************
-                ****************************
-                CODE HERE
-                CODE HERE
-                CODE HERE
-                ****************************
-                ****************************
-                */
-            });
-
-            window.globeView = globeView;
-
-            // Inclinaison Sud
-            var button_sud = document.getElementById('button_sud');
-            button_sud.addEventListener("click", function(){
-              var current_pos=globeView.controls.getCameraTargetGeoPosition();
-              console.log(current_pos);
-            });
-
-
-</script>
+           var renderer;
+           var exports = {};
+       </script>
+<script src="split.js"></script>
     </body>
 </html>
