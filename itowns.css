@@ -52,6 +52,17 @@ body {
 	margin-right: 5px;
 	margin-top: 5px;
 
+}
+#button_vue_initiale{
+	position: absolute;
+	top: 120px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+
+}
+
 #splitSlider {
 		position: absolute;
 		left: 50%;
@@ -63,5 +74,21 @@ body {
 
 #splitSlider:hover {
 		cursor: ew-resize;
+}
 
+#position{
+	position: absolute;
+	top: 250px;
+	right: 4px;
+	background-color: rgba(128,128,128,0.5);
+}
+
+#position tr{
+	width: 50px;
+}
+#position, #position tr, #position td{
+	z-index: 999;
+	visibility: visible;
+	border: 1px solid black;
+	border-collapse: collapse;
 }
