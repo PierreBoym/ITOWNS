@@ -15,26 +15,35 @@ and open the template in the editor.
         <link rel="icon" type="image/png" href="images/icone.png">
     </head>
     <body>
-        <div id="viewerDiv">
-          <button type="button" id="button_sud">Inclinaison SUD</button>
-		  <button type="button" id="button_nord">Inclinaison NORD</button>
-		  <button type="button" id="button_est">Inclinaison EST</button>
-		  <button type="button" id="button_OUEST">Inclinaison OUEST</button>
-		  <button type="button" id="button_vue_initiale">Vue initiale</button>
-		  
-        </div>
-        <div id="splitSlider"></div>
-
-        <script src="examples/GUI/GuiTools.js"></script>
-        <script src="itowns.js"></script>
-
-        <script type="text/javascript">
-           var renderer;
-           var exports = {};
+      <div id="viewerDiv">
+        <button type="button" id="button_sud">Inclinaison SUD</button>
+        <button type="button" id="button_nord">Inclinaison NORD</button>
+        <button type="button" id="button_est">Inclinaison EST</button>
+        <button type="button" id="button_OUEST">Inclinaison OUEST</button>
+  		  <button type="button" id="button_vue_initiale">Vue initiale</button>
+      </div>
+      <table id="position">
+        <tr>
+          <td>Longitude</td>
+          <td>Latitude</td>
+          <td>Altitude</td>
+        </tr>
+        <tr>
+          <td id="longitude">0</td>
+          <td id="latitude">0</td>
+          <td id="altitude">0</td>
+        </tr>
+      </table>
+      <div id="splitSlider"></div>
+      <script src="examples/GUI/GuiTools.js"></script>
+      <script src="itowns.js"></script>
+      <script type="text/javascript">
+         var renderer;
+         var exports = {};
        </script>
        <script src="split.js"></script>
        <script src="buttons.js"></script>
+       <script src="coord.js"></script>
 	   <script src="gpx.js"></script>
-
     </body>
 </html>
