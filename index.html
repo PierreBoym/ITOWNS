@@ -21,34 +21,12 @@ and open the template in the editor.
 		  <button type="button" id="button_est">Inclinaison EST</button>
 		  <button type="button" id="button_OUEST">Inclinaison OUEST</button>
         </div>
+        <div id="splitSlider"></div>
+
         <script src="examples/GUI/GuiTools.js"></script>
         <script src="itowns.js"></script>
-        <script type="text/javascript">
-            /* global itowns,document,GuiTools*/
 
-            // Initial position
-            var positionOnGlobe = { longitude: 2.351323, latitude: 48.856712, altitude: 25000000 };
-
-            // iTowns namespace defined here
-            // Creation of the HTML DOM where the view will be initialized
-            var viewerDiv = document.getElementById('viewerDiv');
-            // Creation of the globe
-            var globeView = new itowns.GlobeView(viewerDiv, positionOnGlobe);
-            // Creation of the menu
-            var menuGlobe = new GuiTools('menuDiv', globeView);
-            menuGlobe.view = globeView;
-
-
-            function addLayerCb(layer) {
-                return globeView.addLayer(layer);
-            }
-
-            // Adding Layers
-            var promises = []
-            promises.push(itowns.Fetcher.json('examples/layers/JSONLayers/Ortho.json').then(addLayerCb));
-            promises.push(itowns.Fetcher.json('examples/layers/JSONLayers/WORLD_DTM.json').then(addLayerCb));
-            promises.push(itowns.Fetcher.json('examples/layers/JSONLayers/IGN_MNT_HIGHRES.json').then(addLayerCb));
-
+<<<<<<< HEAD
             menuGlobe.addGUI('RealisticLighting', false,
                 function(newValue) { globeView.setRealisticLightingOn(newValue); });
 
@@ -106,5 +84,12 @@ and open the template in the editor.
             });
 
 </script>
+=======
+        <script type="text/javascript">
+           var renderer;
+           var exports = {};
+       </script>
+<script src="split.js"></script>
+>>>>>>> 6f6ae7e9f3ca0e6b9c3188412a238ed38a88e721
     </body>
 </html>
