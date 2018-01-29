@@ -53,6 +53,15 @@ body {
 	margin-top: 5px;
 
 }
+#button_vue_initiale{
+	position: absolute;
+	top: 120px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+
+}
 
 #splitSlider {
 		position: absolute;
