@@ -17,16 +17,79 @@ and open the template in the editor.
     <body>
         <div id="viewerDiv">
           <button type="button" id="button_sud">Inclinaison SUD</button>
+		  <button type="button" id="button_nord">Inclinaison NORD</button>
+		  <button type="button" id="button_est">Inclinaison EST</button>
+		  <button type="button" id="button_OUEST">Inclinaison OUEST</button>
         </div>
         <div id="splitSlider"></div>
 
         <script src="examples/GUI/GuiTools.js"></script>
         <script src="itowns.js"></script>
 
+<<<<<<< HEAD
+            menuGlobe.addGUI('RealisticLighting', false,
+                function(newValue) { globeView.setRealisticLightingOn(newValue); });
+
+            // Adding layers in the menu
+            Promise.all(promises).then(function () {
+                menuGlobe.addImageryLayersGUI(globeView.getLayers(function (l) { return l.type === 'color'; }));
+                menuGlobe.addElevationLayersGUI(globeView.getLayers(function(l) { return l.type === 'elevation'; }));
+                console.info('menuGlobe initialized');
+            }).catch( function (e) { console.error(e) });
+
+            // Wait that the globe is well initialized, you should put your function in this event
+            globeView.addEventListener(itowns.GLOBE_VIEW_EVENTS.GLOBE_INITIALIZED, function () {
+                // eslint-disable-next-line no-console
+                console.info('Globe initialized');
+                /*
+                ****************************
+                ****************************
+                CODE HERE
+                CODE HERE
+                CODE HERE
+                ****************************
+                ****************************
+                */
+            });
+
+            window.globeView = globeView;
+
+            // Inclinaison Sud
+            var button_sud = document.getElementById('button_sud');
+            button_sud.addEventListener("click", function(){
+              var current_pos=globeView.controls.getCameraTargetGeoPosition();
+			  console.log(current_pos);
+              globeView.controls.setCameraTargetGeoPosition({longitude:current_pos._values[0], latitude:current_pos._values[1]-45}, true)
+            });
+			// Inclinaison Nord
+            var button_nord = document.getElementById('button_nord');
+            button_nord.addEventListener("click", function(){
+              var current_pos=globeView.controls.getCameraTargetGeoPosition();
+			  console.log(current_pos);
+              globeView.controls.setCameraTargetGeoPosition({longitude:current_pos._values[0], latitude:current_pos._values[1]+45}, true)
+            });
+			// Inclinaison EST
+            var button_est = document.getElementById('button_est');
+            button_est.addEventListener("click", function(){
+              var current_pos=globeView.controls.getCameraTargetGeoPosition();
+			  console.log(current_pos);
+              globeView.controls.setCameraTargetGeoPosition({longitude:current_pos._values[0]+90, latitude:current_pos._values[1]}, true)
+            });
+			// Inclinaison OUEST
+            var button_OUEST = document.getElementById('button_OUEST');
+            button_OUEST.addEventListener("click", function(){
+              var current_pos=globeView.controls.getCameraTargetGeoPosition();
+			  console.log(current_pos);
+              globeView.controls.setCameraTargetGeoPosition({longitude:current_pos._values[0]-90, latitude:current_pos._values[1]}, true)
+            });
+
+</script>
+=======
         <script type="text/javascript">
            var renderer;
            var exports = {};
        </script>
 <script src="split.js"></script>
+>>>>>>> 6f6ae7e9f3ca0e6b9c3188412a238ed38a88e721
     </body>
 </html>
