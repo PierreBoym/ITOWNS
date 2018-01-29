@@ -1,9 +1,9 @@
 html {
 	height: 100%
 }
-body { 
-	margin: 0; 
-	overflow:hidden; 
+body {
+	margin: 0;
+	overflow:hidden;
 	height:100%
 }
 
@@ -14,8 +14,54 @@ body {
     padding: 0;
 }
 #menuDiv {
-	position: absolute; 
-	top:0px; 
+	position: absolute;
+	top:0px;
 	margin-left: 0px;
 }
 
+#button_sud{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+#button_nord{
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#button_est{
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#button_OUEST{
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+
+#splitSlider {
+		position: absolute;
+		left: 50%;
+		top: 0px;
+		width: 4px;
+		height: 100%;
+		background-color: #666666;
+}
+
+#splitSlider:hover {
+		cursor: ew-resize;
+
+}
