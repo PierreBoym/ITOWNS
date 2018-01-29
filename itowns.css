@@ -27,3 +27,27 @@ body {
 	margin-right: 5px;
 	margin-top: 5px;
 }
+#button_nord{
+	position: absolute;
+	top: 20px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#button_est{
+	position: absolute;
+	top: 40px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#button_OUEST{
+	position: absolute;
+	top: 60px;
+	right: 0px;
+	z-index: 999;
+	margin-right: 5px;
+	margin-top: 5px;
+}
